@@ -10,7 +10,7 @@ session = getSessionCookie("email@example.com", "password")
 ```
 
 If we inserted correct login info, we should get something like this:
-```json
+```py
 {'OctoEverywhereSessionKey': 'dnmdmkjasnmkjkj644kJhjjhhHSIJSAjJKHKJAJSJIUEWUEHXSHWETWQZROO94UZZW'}
 ```
 
@@ -29,12 +29,12 @@ printer = getPrinterInfo("<your session cookie>", "<your printer ID>")
 ```
 
 If we inserted correct login info, we should get something like this:
-```json
+```py
 {'Error': '', 'Status': 200, 'Result': {'Id': '<your printer ID>', 'Name': 'example', 'Owners': ['test@example.com'], 'LastConnectionTime': '2021-03-30T15:33:23.4649623Z', 'LastDisconnectTime': '2021-03-30T15:33:13.9014383Z'}}
 ```
 
 Otherwise, a following JSON will be thrown:
-```json
+```py
 {'Error': 'No printer found', 'Status': 404, 'Result': None}
 ```
 
@@ -46,7 +46,7 @@ user = getUserInfo("<your session cookie>")
 ```
 
 Response (returns a List with JSON):
-```json
+```py
 [{'Error': '', 'Status': 200, 'Result': {'Id': '<your printer ID>', 'Name': 'example', 'Owners': ['test@example.com'], 'LastConnectionTime': '2021-03-30T15:33:23.4649623Z', 'LastDisconnectTime': '2021-03-30T15:33:13.9014383Z'}}]
 ```
 
@@ -58,7 +58,7 @@ user = getUserInfo("<your session cookie>")
 ```
 
 Response:
-```json
+```py
 {'Error': '', 'Status': 200, 'Result': {'Email': 'test@example.com', 'PrinterIds': ['PVNZ67HA2GPR514Q2O5X9UB5B8HH3PUT0DAMUQY8'], 'IsMfaEnabled': False, 'HasSeenFirstTimePortalCredsMessage': True}}
 ```
 
@@ -70,7 +70,7 @@ user = getStats("<your session cookie>")
 ```
 
 Response:
-```json
+```py
 {'Error': '', 'Status': 200, 'Result': {'Stats': {'ConnectedPrinters': 5476, 'WebcamMinutesStreamtedInLast24Hours': 3172}}}
 ```
 
@@ -82,7 +82,7 @@ user = getMessages("<your session cookie>")
 ```
 
 Response:
-```json
+```py
 {'Error': '', 'Status': 200, 'Result': {'MessageId': 0, 'HtmlString': None, 'NeedsAck': False, 'OverridePrinterErrors': False}}
 ```
 
