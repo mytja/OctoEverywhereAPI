@@ -1,29 +1,13 @@
-# OctoEverywhereAPI
-Login into OctoEverywhere and use it in your app, instead of NGROK
-
-# We keep the docs of old version [here](https://github.com/mytja/OctoEverywhereAPI/tree/main/legacy/docs.md)
-
-# Usage
-## Import
+## Get session cookie:
 ```py
-from octoeverywhere import OctoEverywhere
+from octoeverywhere import *
 
-octo = OctoEverywhere("email@example.com", "password")
-```
-
-## Get current session cookie:
-```py
-session = octo.currentCookie
-```
-
-## Get new session cookie:
-```py
-session = octo.getSessionCookie("email@example.com", "password")
+session = getSessionCookie("email@example.com", "password")
 ```
 
 If we inserted correct login info, we should get something like this:
 ```py
-'dnmdmkjasnmkjkj644kJhjjhhHSIJSAjJKHKJAJSJIUEWUEHXSHWETWQZROO94UZZW'
+{'OctoEverywhereSessionKey': 'dnmdmkjasnmkjkj644kJhjjhhHSIJSAjJKHKJAJSJIUEWUEHXSHWETWQZROO94UZZW'}
 ```
 
 Otherwise, an exception will be thrown:
@@ -35,7 +19,9 @@ Incorrect login info with status code of 400
 You can get Printer IDs, with `getUserInfo()` function.
 
 ```py
-printer = octo.getPrinterInfo("<your printer ID>")
+from octoeverywhere import *
+
+printer = getPrinterInfo("<your session cookie>", "<your printer ID>")
 ```
 
 If we inserted correct login info, we should get something like this:
@@ -50,7 +36,9 @@ Otherwise, a following JSON will be thrown:
 
 ## Get all printers info
 ```py
-user = octo.getUserInfo()
+from octoeverywhere import *
+
+user = getUserInfo("<your session cookie>")
 ```
 
 Response (returns a List with JSON):
@@ -60,7 +48,9 @@ Response (returns a List with JSON):
 
 ## Get user info
 ```py
-user = octo.getUserInfo("<your session cookie>")
+from octoeverywhere import *
+
+user = getUserInfo("<your session cookie>")
 ```
 
 Response:
@@ -70,7 +60,9 @@ Response:
 
 ## Get OctoEverywhere Statistics for their website
 ```py
-user = octo.getStats("<your session cookie>")
+from octoeverywhere import *
+
+user = getStats("<your session cookie>")
 ```
 
 Response:
@@ -80,7 +72,9 @@ Response:
 
 ## Get Messages
 ```py
-user = octo.getMessages("<your session cookie>")
+from octoeverywhere import *
+
+user = getMessages("<your session cookie>")
 ```
 
 Response:
@@ -89,6 +83,4 @@ Response:
 ```
 
 ## Example
-Full example is avaiable in `test2.py` file
-
-# [To Do](https://github.com/mytja/OctoEverywhereAPI/projects/1)
+Full example is avaiable in `test.py` file
