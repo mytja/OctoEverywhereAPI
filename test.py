@@ -1,6 +1,6 @@
 from octoeverywhere import *
 
-login = getSessionCookie("test@example.com", "password")
+login = getSessionCookie("example@example.com", "password")
 print(login["OctoEverywhereSessionKey"])
 
 user = getUserInfo(login["OctoEverywhereSessionKey"])

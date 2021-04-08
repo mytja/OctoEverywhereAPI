@@ -5,12 +5,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="OctoEverywhereAPI", # Replace with your own username
-    version="1.0.1.1",
+    version="1.0.2",
     author="mytja",
-    description="Get session cookie for simple login onto your OctoEverywhere Printer",
+    description="A Unoffical API for OctoEverywhere",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/mytja/AliExpressAPI",
+    url="https://github.com/mytja/OctoEverywhereAPI",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
