@@ -48,29 +48,19 @@ Otherwise, a following JSON will be thrown:
 {'Error': 'No printer found', 'Status': 404, 'Result': None}
 ```
 
-## Get all printers info
+## Get user info
 ```py
 user = octo.getUserInfo()
 ```
 
-Response (returns a List with JSON):
-```py
-[{'Error': '', 'Status': 200, 'Result': {'Id': '<your printer ID>', 'Name': 'example', 'Owners': ['test@example.com'], 'LastConnectionTime': '2021-03-30T15:33:23.4649623Z', 'LastDisconnectTime': '2021-03-30T15:33:13.9014383Z'}}]
-```
-
-## Get user info
-```py
-user = octo.getUserInfo("<your session cookie>")
-```
-
 Response:
 ```py
-{'Error': '', 'Status': 200, 'Result': {'Email': 'test@example.com', 'PrinterIds': ['PVNZ67HA2GPR514Q2O5X9UB5B8HH3PUT0DAMUQY8'], 'IsMfaEnabled': False, 'HasSeenFirstTimePortalCredsMessage': True}}
+{'Error': '', 'Status': 200, 'Result': {'Email': 'test@example.com', 'PrinterIds': ['<printer ID>'], 'IsMfaEnabled': False, 'HasSeenFirstTimePortalCredsMessage': True}}
 ```
 
 ## Get OctoEverywhere Statistics for their website
 ```py
-user = octo.getStats("<your session cookie>")
+stats = octo.getStats()
 ```
 
 Response:
@@ -80,7 +70,7 @@ Response:
 
 ## Get Messages
 ```py
-user = octo.getMessages("<your session cookie>")
+messages = octo.getMessages()
 ```
 
 Response:
