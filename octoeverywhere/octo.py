@@ -8,11 +8,12 @@ class OctoEverywhere:
     email = ""
     password = ""
 
-    def __init__(self, email, password):
-        session = getSessionCookie(email, password)["OctoEverywhereSessionKey"]
-        self.email = email
-        self.password = password
-        self.currentCookie = session
+    def __init__(self, email=None, password=None):
+        if (email and password):
+            session = getSessionCookie(email, password)["OctoEverywhereSessionKey"]
+            self.email = email
+            self.password = password
+            self.currentCookie = session
 
     def getSessionCookie(self):
         self.currentCookie = getSessionCookie(self.email, self.password)["OctoEverywhereSessionKey"]
