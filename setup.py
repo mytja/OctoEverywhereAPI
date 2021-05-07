@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="OctoEverywhereAPI", # Replace with your own username
-    version="1.0.2.1",
+    version="1.0.3",
     author="mytja",
     description="A Unoffical API for OctoEverywhere",
     long_description=long_description,
